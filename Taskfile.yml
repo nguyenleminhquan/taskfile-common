@@ -1,0 +1,14 @@
+version: '3'
+
+vars:
+  TASKFILE_TEMPLATE_URL: "https://git-gst.mto.zing.vn/mps/devops/external-dns-chart.git"
+  TASKFILE_FOLDER: ".taskfiles"
+
+tasks:
+  install:
+    desc: "Clone MPS Taskfile templates to .taskfiles folder"
+    cmds:
+      - cmd: |
+
+          rm -rf {{.TASKFILE_FOLDER}} && mkdir {{.TASKFILE_FOLDER}}
+          git clone {{.TASKFILE_TEMPLATE_URL}} {{.TASKFILE_FOLDER}}
